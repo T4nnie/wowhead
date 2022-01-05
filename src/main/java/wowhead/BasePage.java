@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.Assert;
@@ -14,6 +15,7 @@ public class BasePage {
     public BasePage (WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver,15);
+    	PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath="//a[@class=\"header-logo\"]")
@@ -21,6 +23,6 @@ public class BasePage {
     
     public HomePage acceuil() {
     	acceuil.click();
-    	return new HomePage(this.driver);    	
+    	return new HomePage(this.driver);  
     }
 }

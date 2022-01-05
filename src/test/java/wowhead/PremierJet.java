@@ -21,7 +21,8 @@ public class PremierJet {
 		driver.get("https://fr.wowhead.com/");
 		HomePage homePage = new HomePage(driver);
 		homePage.cookieSetUp();
-		ResultPage laurderSearch = homePage.faireUnerecherche("laurdeur");
+		homePage.refuserNotififcation();
+		ResultPage lardeurSearch = homePage.faireUnerecherche("lardeur");
 		
 		
 	}
