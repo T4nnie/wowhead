@@ -2,9 +2,9 @@ package wowhead;
 
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +14,7 @@ public class PremierJet {
 	WebDriver driver;
 	
 	
-	@BeforeEach
+	@Before
 	public void setUp() {
 		String s = "src/main/resources/driver";
 		String p = System.getProperty("BROWSER");
