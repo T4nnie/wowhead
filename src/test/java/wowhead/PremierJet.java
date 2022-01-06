@@ -8,14 +8,25 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class PremierJet {
 	WebDriver driver;
 	
+	
 	@BeforeEach
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver","src/main/resources/driver/chromedriver.exe");
-		driver = new ChromeDriver();
+		String s = "src/main/resources/driver";
+		String p = System.getProperty("BROWSER");
+		if (!p.isEmpty() && p.equals("chrome")) {
+			System.setProperty("webdriver.chrome.driver","src/main/resources/driver/chromedriver.exe");
+			driver = new ChromeDriver();
+		}else {
+			System.setProperty("webdriver.edge.driver","src/main/resources/driver/msedgedriver.exe");
+			driver = new EdgeDriver();			
+		}
+		
+		
 		driver.manage().window().maximize();
 	}
 	
