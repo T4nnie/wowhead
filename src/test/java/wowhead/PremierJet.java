@@ -16,8 +16,8 @@ public class PremierJet {
 	
 	@Before
 	public void setUp() {
-		String s = "src/main/resources/driver";
 		String p = System.getProperty("BROWSER");
+		p = p.toLowerCase();
 		if (!p.isEmpty() && p.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver","src/main/resources/driver/chromedriver.exe");
 			driver = new ChromeDriver();
